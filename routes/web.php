@@ -14,8 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('layouts.app');
+});
+
+Route::get('/home', function () {
     return view('main.home');
 });
-Route::get('/', function () {
-    return view('navBar.navbar');
+Route::get('/dbconn', function () {
+    try{
+        DB::connection()->getPdo();
+        return "connection succes";
+    }
+    catch(\Exception $ex)
+    {
+        dd($ex->getMessage());
+    }
+
+    // return view('navBar.navbar');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
