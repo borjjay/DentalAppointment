@@ -12,6 +12,7 @@
     </head>
     <body>
        <div class='mainContainer'>
+        
        @yield('navBar')
     
        <h1> Hello </h1>
