@@ -1,25 +1,7 @@
-@extends('main.home')
-
-@section('navBar')
+@extends('homepage.master')
 
 
-<div>
-    <ul>
-<li>
-    hello
-</li>
-<li>
-    hello
-</li>
-<li>
-    hello
-</li>
-<li>
-    hello
-</li>
+@section('navContainer')
 
 
-    </ul>
-</div>
-    
 @endsection

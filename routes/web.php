@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('home');
+})->name('home');
+Route::get('/navbar', function () {
+    return view('navBar.navBar');
 });
 
-Route::get('/home', function () {
-    return view('main.home');
-});
+
 Route::get('/dbconn', function () {
     try{
         DB::connection()->getPdo();
