@@ -26,7 +26,7 @@
                       </div>
                   </div>
       
-                  <i class='bx bx-chevron-right toggle'></i>
+                  {{-- <i class='bx bx-chevron-right toggle'></i> --}}
               </header>
       
               <div class="menu-bar">
@@ -84,12 +84,16 @@
                   </div>
       
                   <div class="bottom-content">
-                      <li class="">
-                          <a href="#">
-                              <i class='bx bx-log-out icon' ></i>
-                              <span class="text nav-text">Logout</span>
-                          </a>
-                      </li>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
       
                       <li class="mode">
                           <div class="sun-moon">
@@ -121,9 +125,9 @@
             modeText = body.querySelector(".mode-text");
       
       
-      toggle.addEventListener("click" , () =>{
-          sidebar.classList.toggle("close");
-      })
+    //   toggle.addEventListener("click" , () =>{
+    //       sidebar.classList.toggle("close");
+    //   })
       
       searchBtn.addEventListener("click" , () =>{
           sidebar.classList.remove("close");

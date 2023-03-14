@@ -1,4 +1,4 @@
-@extends('homepage.master')
+@extends('layouts.app')
 
 @section('navContainer')
 <div class="container">
